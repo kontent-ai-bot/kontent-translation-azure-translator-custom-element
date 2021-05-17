@@ -3,7 +3,7 @@
     <div v-if="!loaded">
       Custom element not loaded. (Not in an iFrame?)
     </div>
-    <slot v-else :context="context" :element="element" />
+    <slot v-else :context="context" :element="element" :handleDisabledChanged="handleDisabledChanged" />
     <ResizeObserver @notify="$CustomElementApi.updateSize" />
   </div>
 </template>

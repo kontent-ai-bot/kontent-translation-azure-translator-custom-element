@@ -76,6 +76,10 @@ export default {
       type: Object,
       required: false
     },
+    handleDisabledChanged: {
+      type: Function,
+      required: false
+    }
   },
   created () {
     this.fetchLanguages()
@@ -157,7 +161,7 @@ export default {
       }
     },
     resubmit: function () {
-      this.element.disabled = true
+      this.handleDisabledChanged && this.handleDisabledChanged(true)
       this.resubmitInProgress = true
       const nextLanguageId = this.getNextLanguageId()
       const workflowId = this.element.config.pendingWorkflowStepId
@@ -183,8 +187,7 @@ export default {
   },
   watch: {
     savedValue: function () {
-      this.element.value = JSON.stringify(this.savedValue);
-      this.$CustomElementApi.setValue(this.element.value)
+      this.$CustomElementApi.setValue(JSON.stringify(this.savedValue))
     }
   }
 }
