@@ -24,11 +24,11 @@ As this custom element is meant to be used across multiple content types, you sh
 
 The JSON parameters required for the component ar eas follows:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
-| debug | boolean | Turns on/off showing the saved value's JSON in the custom element |
-| cmApiKey | string | This should be the project's CM API key. This is needed to load the languages dynamically and change the workflow step of variants if things get stuck |
-| pendingWorkflowStepId | GUID | The GUID of the workflow step that triggers the translation connector. You can get this using the [retrieve workflow steps](https://docs.kontent.ai/reference/content-management-api-v2#operation/retrieve-workflow-steps) API endpoint.
+| Name                  | Value   | Description                                                                                                                                                                                                                              | Required                                                            |
+| --------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| debug                 | boolean | Turns on/off showing the saved value's JSON in the custom element                                                                                                                                                                        | YES                                                                 |
+| cmApiKey              | string  | This should be the project's CM API key. This is needed to change the workflow step of variants if things get stuck.                                                                                                                     | NO - This is needed when you want to enable re-submit functionality. |
+| pendingWorkflowStepId | GUID    | The GUID of the workflow step that triggers the translation connector. You can get this using the [retrieve workflow steps](https://docs.kontent.ai/reference/content-management-api-v2#operation/retrieve-workflow-steps) API endpoint. | NO - This is needed when you want to enable re-submit functionality. |
 
 The full JSON will look something like this:
 

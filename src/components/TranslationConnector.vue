@@ -26,7 +26,7 @@
           </template>
         </div>
       </div>
-      <div v-if="hasTranslationStarted() && !hasTranslationFinished()">
+      <div v-if="element.config.pendingWorkflowStepId && element.config.cmApiKey && hasTranslationStarted() && !hasTranslationFinished()">
         <h4>Translation seem stuck?</h4>
         <p>
           <button
