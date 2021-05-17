@@ -6,11 +6,12 @@
       <div class="option__list">
         <div
           class="option__pane"
-          v-for="language in availableLanguages.languages"
+          v-for="language in availableLanguages"
           :key="language.id"
         >
           <!-- <input class="option__input--hidden" /> -->
-          <template v-if="language.is_active && !language.is_default">
+          <!-- Non-default language -->
+          <template v-if="language.id !== '00000000-0000-0000-0000-000000000000'">
             <label
               :class="getOptionClasses(language.id)"
               @click="
@@ -116,13 +117,9 @@ export default {
     },
     fetchLanguages () {
       this.loading = true
-      const url = `https://manage.kontent.ai/v2/projects/${this.context.projectId}/languages`
-      axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${this.element.config.cmApiKey}`
-        }
-      }).then(response => {
-        this.availableLanguages = response.data
+      const url = `https://deliver.kontent.ai/${this.context.projectId}/languages`
+      axios.get(url).then(response => {
+        this.availableLanguages = response.data.languages.map(language => language.system)
         this.loading = false
       })
     },
