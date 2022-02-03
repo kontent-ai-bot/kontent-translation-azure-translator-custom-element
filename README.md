@@ -1,6 +1,6 @@
 # Kentico Kontent Custom Element: Azure Translator Text API Connector
 
-This [custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features) for [Kentico Kontent](https://kontent.ai) gives editors a way to configure and see the status of translations automated via the Azure Translator Text API. It's based on [VueJS](https://vuejs.org/) to enable more dynamic functionality and is intended for use with its [companion project for responding to Kontent webhooks](https://github.com/Kentico/kontent-translation-azure-translator-webhook-functions).
+This [custom element](https://kontent.ai/learn/tutorials/develop-apps/integrate/content-editing-extensions) for [Kentico Kontent](https://kontent.ai) gives editors a way to configure and see the status of translations automated via the Azure Translator Text API. It's based on [VueJS](https://vuejs.org/) to enable more dynamic functionality and is intended for use with its [companion project for responding to Kontent webhooks](https://github.com/Kentico/kontent-translation-azure-translator-webhook-functions).
 
 Features:
 
@@ -16,11 +16,11 @@ If you're interested in trying this out without deploying it yourself, you can u
 
 ## Deploying
 
-First, fork this repo. You can use whatever build/deploy process you like. Netlify is a good option since you can easily connect it to your repo and do automatic builds if/when you modify the codebase. The main command to be aware of is `npm run build`. This will do a production build of the custom element. Once complete you can deploy the contents of the `dist` folder to anywhere you want. Keep in mind that Kentico Kontent requires that the URLs be publicly available and [served over HTTPS](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features#a-2--secure-hosting).
+First, fork this repo. You can use whatever build/deploy process you like. Netlify is a good option since you can easily connect it to your repo and do automatic builds if/when you modify the codebase. The main command to be aware of is `npm run build`. This will do a production build of the custom element. Once complete you can deploy the contents of the `dist` folder to anywhere you want. Keep in mind that Kentico Kontent requires that the URLs be publicly available and [served over HTTPS](https://kontent.ai/learn/tutorials/develop-apps/integrate/content-editing-extensions#a-ensuring-secure-hosting).
 
 ## Configuring the Custom Element
 
-As this custom element is meant to be used across multiple content types, you should [configure the custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features#a-3--displaying-a-custom-element-in-kentico-kontent) inside a content snippet so you only have to configure it once.
+As this custom element is meant to be used across multiple content types, you should [configure the custom element](https://kontent.ai/learn/tutorials/develop-apps/integrate/content-editing-extensions#a-displaying-your-custom-editor-in-kontent) inside a content snippet so you only have to configure it once.
 
 The JSON parameters required for the component ar eas follows:
 
@@ -28,7 +28,7 @@ The JSON parameters required for the component ar eas follows:
 | ---- | ----- | ----------- |
 | debug | boolean | Turns on/off showing the saved value's JSON in the custom element |
 | cmApiKey | string | This should be the project's CM API key. This is needed to load the languages dynamically and change the workflow step of variants if things get stuck |
-| pendingWorkflowStepId | GUID | The GUID of the workflow step that triggers the translation connector. You can get this using the [retrieve workflow steps](https://docs.kontent.ai/reference/content-management-api-v2#operation/retrieve-workflow-steps) API endpoint.
+| pendingWorkflowStepId | GUID | The GUID of the workflow step that triggers the translation connector. You can get this using the [retrieve workflow steps](https://kontent.ai/learn/reference/management-api-v2#operation/retrieve-workflow-steps) API endpoint.
 
 The full JSON will look something like this:
 
