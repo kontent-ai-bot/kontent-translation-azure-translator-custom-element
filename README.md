@@ -1,5 +1,7 @@
 ## :warning: Deprecation notice
 > This repository has been archived and is no longer maintained.
+>
+> If you want to learn about integrating any TMS with Kontent.ai, have a look at the [Integrate your Project with Translation Management Systems guide](https://kontent.ai/learn/tutorials/develop-apps/integrate/translations/).
 
 # Kentico Kontent Custom Element: Azure Translator Text API Connector
 
